@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: mnras.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "Bloom"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 37 entries,
+            2881 wiz_defined-function locations,
+            1047 strings with 24320 characters,
+and the built_in function-call counts, 17995 in all, are:
+= -- 1516
+> -- 1262
+< -- 63
++ -- 568
+- -- 180
+* -- 2265
+:= -- 2724
+add.period$ -- 0
+call.type$ -- 37
+change.case$ -- 74
+chr.to.int$ -- 35
+cite$ -- 37
+duplicate$ -- 902
+empty$ -- 871
+format.name$ -- 298
+if$ -- 3153
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 37
+newline$ -- 124
+num.names$ -- 234
+pop$ -- 193
+preamble$ -- 1
+purify$ -- 148
+quote$ -- 0
+skip$ -- 576
+stack$ -- 0
+substring$ -- 1059
+swap$ -- 503
+text.length$ -- 151
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 333
+warning$ -- 0
+while$ -- 264
+width$ -- 0
+write$ -- 384
+(There was 1 warning)
