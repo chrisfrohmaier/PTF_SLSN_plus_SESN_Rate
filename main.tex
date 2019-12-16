@@ -179,23 +179,38 @@ It is apparent that this method heavily relies on a realistic SN template light 
 
 \maria{Start to write stuff}
 \subsubsection{Stripped Evelope Supernovae}
-\angus{When introducing SESNe templates, say "We do not differentiate between the subclasses of normal luminosity SESNe (i.e. between Ib, Ic IIb SNe), as, given the heterogeneous nature of SESN spectra, divisions between these subclasses are poorly defined (Shrivvers et al. 2017), and miss-classification across these subgroups is a potential contaminant to any subsequent rate calculation\footnote{\angus{SLSNe-I are exempt from this issues, given the relative phase at which their spectra begin to resemble those of SN~Ic, and the presence of shallow O\ion{ii} absorption in their early spectra, which are not observed within other SESN subclasses (Quimby et al. 2018).}}. Therefore we refer to all normal luminosity subclasses as SESNe from herein.}
+\angus{When introducing SESNe templates, say "We do not differentiate between the subclasses of normal luminosity SESNe (i.e. between Ib, Ic IIb SNe), as, given the heterogeneous nature of SESN spectra, divisions between these subclasses are poorly defined (Shrivvers et al. 2017), and miss-classification across these subgroups is a potential contaminant to any subsequent rate calculation\footnote{\angus{SLSNe-I are exempt from this issue, given the relative phase at which their spectra begin to resemble those of SNe~Ic, and the presence of shallow O\ion{II}~absorption in their early spectra, which are not observed within other SESN subclasses (Quimby et al. 2018).}}. Therefore we refer to all normal luminosity subclasses as SESNe from herein.}
 
 
 % To simulate the observable SESNe population in the PTF survey, we use the published core-collapse SN (CCSN) templates of {\angus{Vincenzi et al. 2019}}, utilizing the 13 SN Ib, 7 SN Ic and 6 SN Ic-BL templates in the database. These bolometric templates typically extended between -10 and +150 from the peak, and provide daily sampled and de-reddened, rest-frame spectrophotometric evolution for each SN. These templates are then redshifted and {\angus{a random host galaxy extinction applied \comment{DO WE DO THIS?}}} before being inserted into the simulation.
 
 \subsection{Superluminous Supernovae}
 
-\subsubsection{Low-redshift SLSN-I Sample}
-To avoid any possible redshift evolutionary effects tied to the progenitor systems, we model the range of possible magnetar properties our template SLSNe-I may take based upon the magnetar properties attributed to a low-redshift sample of SLSNe events. As literature samples of SLSNe below our \angus{rate redshift range ($z<0.2$)~} are relatively small, we expand our sample to include events below $z=0.3$, thus ensuring a larger sample to define our parameter space. 
+\subsubsection{Model}
+\label{sec:simSLSN}
+At present, there are few existing samples of spectro-photometric templates for SLSNe-I, as a result of sparse data coverage across most events due to their typically higher redshifts and low signal-to-noise spectra, resulting in many gaps in the SED coverage.
 
-For fitting the magnetar model to our SLSNe-I light curves, we place the following data restrictions upon our sample to guarantee adequate sampling across both the duration of the light curve and the underlying spectral energy distribution (SED) for each event:
+Therefore for simplicity, we chose to create our template light curves using a parametric model capable of replicating the general form of a SLSN-I event, neglecting the small scale behaviours often present within the main light curve which may be indicative of multiple energy sources \citep[e.g.][]{Inserra2017b}, as these features do not significantly affect the detectability of any prospective SLSNe-I event in the survey. We therefore chose to generate our template light curves using a magnetar model, which we detail below.
+
+Models of magnetar spin-down have been found previously to be capable of replicating the broad photometric properties of a large number of SLSN-I light curves (i.e. rise, peak luminosity, slow decline) \citep{Inserra2013,Nicholl2013,Nicholl2017B,Dessart2019}, and whilst there remains some debate as to whether the magnetar model alone is able to fully replicate the photometric behaviour of {\textit{all}} SLSNe-I \citep[e.g.][]{Inserra2017b,Angus2018}, it provides a framework from within which a \lq typical\rq~ SLSNe light curve may be generated. We therefore adopt the magnetar model of \cite{Inserra2013}, and as per \cite{Prajs2016}, we also include a time dependant trapping coefficient introduced by \cite{Wange2015} to account for the late-time behaviour of the light curve;
+
+\begin{multline}
+L_{\mathrm{SN}}\left ( t \right )= \left(1- \exp{\left(\frac{9\kappa M_{ej}^{2}}{40\pi E_{k}}t^{-2} \right)}\right)\times e^{-(t/\tau_{\mathrm{m}})^{2}} \\ 2\int_{0}^{t/\tau_{\mathrm{m}}}
+\left(\int 4.9\times10^{46} \left(\frac{B}{10^{14}~\mathrm{G}} \right)^{2}\left(\frac{P}{\mathrm{ms}} \right)^{-4} \frac{1}{(1 + t/\tau_{\mathrm{p}})^{2}}\right ) \\ e^{(t^{\prime}/\tau_{\mathrm{m}})^{2}}\frac{dt^{\prime}}{\tau_{\mathrm{m}}} \mathrm{~ erg~ s^{-1}},
+\label{equation_magnetar}
+\end{multline}
+
+where $B$ and $P$ are the magnetic field strength and period of the magnetar respectively, $\tau_{\mathrm{p}}$ is the spin down timescale of the magnetar, and $\tau_{\mathrm{m}}$ is the diffusion timescale, which under the assumption of uniform ejecta density, can be expressed in terms of the mass, $M_{\mathrm{ej}}$, opacity, $\kappa$, and kinetic energy, $E_{\mathrm{k}}$ of the ejecta. We assume an explosion energy of 10$^{51}$ erg and a hydrogen-free ejecta with an opacity of $\kappa = 0.1~\mathrm{cm}^{2} \mathrm{g}^{-1}$. 
+
+We therefore generate our prospective SLSNe-I light curves by varying values for our three free parameters; namely $B$, $P$ and $\tau_{\mathrm{m}}$. To determine the range of possible values these parameters may take (thus the final parameter space being sampled), we first fit this magnetar model to the light curves of a representative sample of SLSNe-I.To avoid any possible redshift evolutionary effects tied to the progenitor systems, we model the range of possible magnetar properties our template SLSNe-I may take based upon the magnetar properties attributed to a low-redshift sample of SLSNe events. As literature samples of SLSNe below our rate redshift range ($z<0.2$) are relatively small, we expand our model sample to include events below $z=0.3$, thus ensuring a larger sample to define our parameter space. 
+
+For fitting the magnetar model to our SLSNe-I light curves, we place the following data restrictions upon our model sample to guarantee adequate sampling across both the duration of the light curve and the underlying spectral energy distribution (SED) for each event:
 \begin{enumerate}
     \item The existing light curves must have data in $>$3 separate photometric bands for better constraining the underlying SED.
     \item The light curve must be well sampled in these bands (we require $\textgreater$6 epochs of data in each band across the observed duration of the event).
 \end{enumerate}
 
-We then use Gaussian Processes to interpolate the SLSNe-I light curves. We then fit the resulting interpolated light curves with the phase dependent UV-absorbed blackbody model presented within \cite{Inserra2017Euclid} and \cite{Angus2018}. At each epoch the resulting SED is integrated to determine the bolometric light curve of the SN. 
+We then use Gaussian Processes to interpolate the model SLSNe-I light curves. We then fit the resulting interpolated light curves with the phase dependent UV-absorbed blackbody model presented within \cite{Inserra2017Euclid} and \cite{Angus2018}. At each epoch the resulting SED is integrated to determine the bolometric light curve of the SN, and the resulting bolometric lightcurves fit with the magnetar model outlined above. Our final sample of 10 model SLSNe-I below $z\textless0.3$ are presented within Table \ref{tab:slsnproperties}, alongside the fit $B$, $P$ and $\tau_{\mathrm{m}}$ values to the magnetar model outlined above. 
 
 \begin{table}
 	\caption{The derived physical properties of the magnetar models applied to the light curves of low redshift SLSNe.}
@@ -220,29 +235,11 @@ We then use Gaussian Processes to interpolate the SLSNe-I light curves. We then 
 	\end{tabular}
  \end{table}
 
-Our final sample of \angus{10~} SLSNe-I below $z\textless0.3$ is presented within Table \ref{tab:slsnproperties}, alongside the fit $B$, $P$ and $\tau_{\mathrm{m}}$ values to the magnetar model outlined above. 
 
-\subsubsection{Templates}
-\label{sec:simSLSN}
-{\angus{At present, there are few existing samples of SLSN-I spectro-photometric templates, largely as a result of the extreme diversity exhibited within this spectroscopic subclass, both in photometric and spectroscopic evolution.}} 
-
-Therefore for simplicity, we chose to create our template light curves using a parametric model capable of replicating the general form of a SLSN-I event, neglecting the small scale behaviours often present within the main light curve which may be indicative of multiple energy sources \citep[e.g.][]{Inserra2017b}, as these features do not significantly affect the detectability of any prospective SLSNe-I event in the survey. We therefore chose to generate our template light curves using a magnetar model, which we detail below.
-
-Models of magnetar spin-down have been found previously to be capable of replicating the broad photometric properties of a large number of SLSN-I light curves (i.e. rise, peak luminosity, slow decline) \citep{Inserra2013,Nicholl2013,Nicholl2017B,Dessart2019}, and whilst there remains some debate as to whether the magnetar model alone is able to fully replicate the photometric behaviour of {\textit{all}} SLSNe-I \comment{\angus{REFS}}, it provides a framework from within which a \lq typical\rq SLSNe light curve may be generated. We therefore adopt the magnetar model of \cite{Inserra2013}, and as per \cite{Prajs2016}, we also include a time dependant trapping coefficient introduced by \cite{Wange2015} to account for the late-time behaviour of the light curve;
-
-\begin{multline}
-L_{\mathrm{SN}}\left ( t \right )= \left(1- \exp{\left(\frac{9\kappa M_{ej}^{2}}{40\pi E_{k}}t^{-2} \right)}\right)\times e^{-(t/\tau_{\mathrm{m}})^{2}} \\ 2\int_{0}^{t/\tau_{\mathrm{m}}}
-\left(\int 4.9\times10^{46} \left(\frac{B}{10^{14}~\mathrm{G}} \right)^{2}\left(\frac{P}{\mathrm{ms}} \right)^{-4} \frac{1}{(1 + t/\tau_{\mathrm{p}})^{2}}\right ) \\ e^{(t^{\prime}/\tau_{\mathrm{m}})^{2}}\frac{dt^{\prime}}{\tau_{\mathrm{m}}} \mathrm{~ erg~ s^{-1}},
-\label{equation_magnetar}
-\end{multline}
-
-where $B$ and $P$ are the magnetic field strength and period of the magnetar respectively, $\tau_{\mathrm{p}}$ is the spin down timescale of the magnetar, and $\tau_{\mathrm{m}}$ is the diffusion timescale, which under the assumption of uniform ejecta density, can be expressed in terms of the mass, $M_{\mathrm{ej}}$, opacity, $\kappa$, and kinetic energy, $E_{\mathrm{k}}$ of the ejecta. We assume an explosion energy of \angus{10$^{51}$ erg~} and a hydrogen-free ejecta with an opacity of $\kappa = 0.1~\mathrm{cm}^{2} \mathrm{g}^{-1}$. 
-
-We therefore generate our prospective SLSNe-I light curves by varying values for our three free parameters; namely $B$, $P$ and $\tau_{\mathrm{m}}$. To determine the range of possible values these parameters may take (thus the final parameter space being sampled), we first fit this magnetar model to the light curves of a representative sample of SLSNe-I.   
 
 \subsubsection{Generating SLSN Light Curve Templates}
 
-To avoid generating \lq non SLSNe-I-like\rq light curves from our magnetar model, we chose to create template light curves based upon magnetars contained within a parameter space which encloses all the fitted magnetar properties of our low-redshift SLSN-I sample. We determine this parameter space using a Khachiyan algorithm \citep{Aspvall1980,Khachiyan1980} to determine the smallest volume which contains all of our fitted magnetars. We may then draw templates from fixed combinations of magnetar properties contained in coordinates within this ellipsoidal parameter space. Given the small number of objects used to define this parameter space, we perform jackknife resampling to confirm the determined ellipsoid is not skewed by outlying points, and find our ellipsoid fit to be optimal for the sample. We visualise this final parameter space in Figure \ref{fig:param_space}. However, given the ellipsoidal nature of this parameter space, some of the values enclosed within it are unphysical. We therefore exclude all magnetar combinations containing unphysical values when generating our template light curves. 
+To avoid generating \lq non SLSNe-I-like\rq~ light curves from our magnetar model, we chose to create template light curves based upon magnetars whose properties are contained within a parameter space which encloses all the fitted properties of our low-redshift SLSN-I sample. We determine this parameter space using a Khachiyan algorithm \citep{Aspvall1980,Khachiyan1980} to determine the smallest volume which contains all of our fitted magnetars. We may then draw templates from fixed combinations of magnetar properties contained in coordinates within this ellipsoidal parameter space. Given the small number of objects used to define this model parameter space, we perform jackknife resampling to confirm the determined ellipsoid is not skewed by any outlying points, and find our ellipsoid fit to be optimal for the sample. We visualise this final parameter space in Figure \ref{fig:param_space}. However, given the ellipsoidal nature of this parameter space, some of the values enclosed within it are unphysical. We therefore exclude all magnetar combinations containing unphysical values when generating our template light curves. 
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{./Original_3D_param_space.png}
@@ -250,7 +247,8 @@ To avoid generating \lq non SLSNe-I-like\rq light curves from our magnetar model
     \label{fig:param_space}
 \end{figure}
 
-We finally create a library of template PTF $R$-band light curves using the possible magnetars contained within our defined parameter space. We assume a UV absorbed black body as the underlying SED, and generate observer-frame light curves over all redshifts within the range 0.001$< z <$0.2, using a redshift bin size of 0.001.
+We test how representative this model parameter space is of the PTF sample of SLSNe-I within this redshift range by fitting their available photometry with the same magnetar model. We find that $\sim 75\%$ of the derived properties of the low-redshift PTF SLSNe-I fall within 3$\sigma$ of this model parameter space. We thus create a library of template PTF $R$-band light curves using the possible magnetars contained within this defined parameter space. We assume a UV absorbed black body as the underlying SED, and generate observer-frame light curves over all redshifts within the range 0.001$< z <$0.2, using a redshift bin size of 0.001.
+
 
 \section{The Supernova Sample}
 
