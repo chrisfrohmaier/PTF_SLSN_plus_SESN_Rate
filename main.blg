@@ -6,45 +6,45 @@ Database file #1: references.bib
 Warning--I didn't find a database entry for "Bloom"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 37 entries,
+You've used 45 entries,
             2881 wiz_defined-function locations,
-            1047 strings with 24320 characters,
-and the built_in function-call counts, 17995 in all, are:
-= -- 1516
-> -- 1262
-< -- 63
-+ -- 568
-- -- 180
-* -- 2265
-:= -- 2724
+            1125 strings with 25600 characters,
+and the built_in function-call counts, 21311 in all, are:
+= -- 1837
+> -- 1438
+< -- 71
++ -- 648
+- -- 194
+* -- 2709
+:= -- 3198
 add.period$ -- 0
-call.type$ -- 37
-change.case$ -- 74
-chr.to.int$ -- 35
-cite$ -- 37
-duplicate$ -- 902
-empty$ -- 871
-format.name$ -- 298
-if$ -- 3153
+call.type$ -- 45
+change.case$ -- 90
+chr.to.int$ -- 43
+cite$ -- 45
+duplicate$ -- 1074
+empty$ -- 1045
+format.name$ -- 338
+if$ -- 3734
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 37
-newline$ -- 124
-num.names$ -- 234
-pop$ -- 193
+missing$ -- 45
+newline$ -- 148
+num.names$ -- 276
+pop$ -- 224
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 180
 quote$ -- 0
-skip$ -- 576
+skip$ -- 678
 stack$ -- 0
-substring$ -- 1059
-swap$ -- 503
-text.length$ -- 151
+substring$ -- 1303
+swap$ -- 573
+text.length$ -- 183
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 333
+type$ -- 405
 warning$ -- 0
-while$ -- 264
+while$ -- 320
 width$ -- 0
-write$ -- 384
+write$ -- 463
 (There was 1 warning)
