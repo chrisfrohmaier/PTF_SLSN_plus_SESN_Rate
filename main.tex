@@ -318,7 +318,6 @@ We choose to draw our candidates from TableXX in \chris{De Cia} and subsequently
 
 Talk about how this is whole sky
 
-\chris{I CANT REMEMBER OUR CONCLUSION ON PHOTOMETRIC CANDIDATES HELP}
 
 \subsection{Host Surface Brightness}
 \label{sec:fox_distribution}
@@ -357,7 +356,7 @@ We now infer our final rate by bootstrap sampling from Equation~\ref{eqn:poiObs}
 \subsubsection{Stripped-envelope supernova rate}
 \label{SESN_Rate}
 
-We now shift our focus to a subset of the CCSN sample and look to apply our rate methodology to the SESNe. Our sample consists of 24 spectroscopically confirmed objects listed in TableXX. Once again we must include our contamimnant supernovae of unknown type, PTF12bvf and PTF12gfk, as a systematic uncertainty in the final estimate of our rate. This brings our total sample size to 26 SESNe and we use this number as our $N_\mathrm{obs}$ in Equation~\ref{eqn:poiObs} and follow the prescription of Section~\ref{sec:CCSN_Rate}. We performed another 400,000 realizations of just the SESN rate to probe the intrinsic SESN rate related to discovering 26 events. The probability distribution is presented in Figure~\ref{fig:SESNrateProbDist} and shows that the most likely SESN rate is $r^\mathrm{SE}_v=2.41_{-0.64}^{+0.88}\times10^{-5}\,\text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$ at a volume weighted mean redshift of $ \langle z \rangle = 0.028$.
+We now shift our focus to a subset of the CCSN sample and look to apply our rate methodology to the SESNe. Our sample consists of 24 spectroscopically confirmed objects listed in TableXX. Once again we must include our contamimnant supernovae of unknown type, PTF12bvf and PTF12gfk, as a systematic uncertainty in the final estimate of our rate. This brings our total sample size to 26 SESNe and we use this number as our $N_\mathrm{obs}$ in Equation~\ref{eqn:poiObs} and follow the prescription of Section~\ref{sec:CCSN_Rate}. It is worth empahsising that this measurement of the SESN rate is performed completely independently of the CCSN simulation and is, therefore, unaffected by any assumptions on the SESN to CCSN population fraction. We performed another 400,000 realizations of just the SESN rate to probe the intrinsic SESN rate related to discovering 26 events. The probability distribution is presented in Figure~\ref{fig:SESNrateProbDist} and shows that the most likely SESN rate is $r^\mathrm{SE}_v=2.41_{-0.64}^{+0.88}\times10^{-5}\,\text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$ at a volume weighted mean redshift of $ \langle z \rangle = 0.028$.
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{./SESN_Rate.pdf}
@@ -379,8 +378,19 @@ We now briefly summarise the comparable rate measurments through increasing reds
 
 The literature sample, including our own CCSN and SESN rate measurements, are presented in Figure~\ref{fig:rates_CC_lit} and illustrates that the CCSN rate increases with redshift. This reflects the increasing SFR with look back time due to CCSNe exploding relatively promptly after formation ($\lesssim40\,\mathrm{Myr}$). We normalised the cosmic Star Formation History (SFH) as parameterised by \citet{2008MNRAS.388.1487L} with the \citet{2001MNRAS.326..255C} functional form. This is presented in Figure~\ref{fig:rates_CC_lit} by the blue dashed line. Assuming the CCSN rate follows this simple evolution from z=0 over a look back time of $\sim4.3$Gyr, we find the CCSN rate increases by a factor of $\sim 4.2$.
 
-We are unable to make any assertions on the fraction of CCSN that are SESNe from our data as this ratio is an implicit assumption used in our rate simulations. However, we can use the \citet{2017PASP..129e4201S} population fractions to probe any systematic biases in our simualtion pipeline. It is natural to expect that the brighter intrinsic luminosities of SESNe would make them easy to discover and, hence, introduce a malmquist bias. We explored this by taking our normalised SFH and scaling it by the estimated SESN population fraction. This is presented in Figure~\ref{fig:rates_CC_lit} by green dot-dashed line.
+We are unable to make any assertions on the fraction of CCSN that are SESNe from our data as this ratio is an implicit assumption used in the CCSN rate simulation. However, we can use the \citet{2017PASP..129e4201S} population fractions to probe any systematic biases in our simulation pipeline. It is natural to expect that the brighter intrinsic luminosities of SESNe would make them easy to discover and, hence, introduce a malmquist bias. We explored this by taking our normalised SFH and scaling it by the estimated SESN population fractions. This is presented in Figure~\ref{fig:rates_CC_lit} by green dot-dashed line and is in good agreement with our measured SESN rate represented by the orange star. We are, therefore, confident that our rate simulations are unaffected by the malmquist bias and futher adds credence to our independent measurement of the absolute SESN rate.
 
+
+\section{SLSN-I Rate}
+
+We now examine the rate of SLSNe-I from our PTF data. Chris needs to write this asap!
+
+
+\begin{figure*}
+	\includegraphics[width=\linewidth]{./SLSN_Compare_Literature.pdf}
+    \caption{}
+    \label{fig:rates_SLSN_Lit}
+\end{figure*}
 
 % In this Section we describe our method of calculating the SLSN-I rate in the PTF data. The complexities of calculating supernova rates in survey data are amplified in PTF due to the large observing footprint, variable cadence, and rarity of SLSN-I. To calculate the rate we considered adopting an ``efficiency weighting'' approach \citep[e.g.][]{Perrett12, Frohmaier19} where individual objects are weighted according to the results of a survey simulation. Whilst this method was effective at calculating the SN Ia rate in PTF, \citet{Frohmaier19} required strict data quality cuts in a regularly cadenced domain that only a sub-set of SNe Ia met (N=90). This methodology was justified as it reduced the systematic uncertainties associated with poor quality data, without sacrificing much of the statistical relevance of their sample size. This is something we are unwilling to do as our SLSN-I sample is small to begin with.
 
@@ -391,18 +401,8 @@ We are unable to make any assertions on the fraction of CCSN that are SESNe from
 % Building on these principles, our method for calculating the volumetric SLSN-I rate proceeds as follows. We first define the sky area and redshift range over  which PTF would have been sensitive to SLSNe. Unlike other PTF rates analyses \citep{Frohmaier18, Frohmaier19}, we do not sub-divide the sky into smaller well-controlled `sub-surveys' with a regular cadence. This is because the long duration of SLSN light curves makes them less susceptible to cadence variations. We, therefore, simulate SLSNe over a ${\sim}$30,000\,deg$^2$ total footprint ($\Theta_\mathrm{obs}$) \chris{(The 30,000deg simulation is `id=2' in the database)}\ across 3 years of operation from 2010--2012 ($T_\mathrm{obs}$). We are unable to perform light curve simulations in data taken in 2009 due to the unreliable nature of the recovery efficiencies during the survey's first few months of operation. We set the upper limit for a simulated object to be z=0.2 following our sample definition in Section~\chris{Write about the sample}.
 
 
-\section{Discussion}
 
 
-\subsection{SESN rate}
-
-\subsection{SLSN-I Rate}
-
-\begin{figure*}
-	\includegraphics[width=\linewidth]{./SLSN_Compare_Literature.pdf}
-    \caption{}
-    \label{fig:rates_SLSN_Lit}
-\end{figure*}
 
 
 In this Section we present the SLSN-I volumteric rate and discuss the associated uncertainties with this result. The small size of our SLSN sample (N=10) necessarily dictates that our final result is statistics limited. The advantage of our Monte-Carlo simulation technique is the intuitive interpretation of our uncertainties \angus{Humble brag alert}.
