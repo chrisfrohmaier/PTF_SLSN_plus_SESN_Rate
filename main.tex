@@ -161,23 +161,33 @@ It is apparent that this method heavily relies on a realistic SN template light 
 \chris{Note to myself. We can be reasonably sure that the sample is complete because De Cia say they are not significantly biased in their sample (Section 2), considering we make quite a conservative redshift cut, we are can be confident our SLSN-I sample is complete.}
 
 \section{Supernova Template Light Curve}
-\subsection{Core-Collapse Supernovae}
-\chris{It would be great if Maria could add to this section}
-\begin{itemize}
-    \item Any time you want be to describe something, just let me know with a `Chris to explain comment'
-    \item This subsection should be reasonably short, most of the details are in Vincenzi 2019
-    \item e.g. ``In this section we describe the construction and usage of the CCSN templates for our simulations. Our methodology is presented and thoroughly described in Vincezi et al. 2019 but we summarise here...''
-    \item Briefly explain where the template data is drawn from and how the templates are made
-    \item Explain how the templates are use to generate PTF R light curves
-    \item We need to talk about assumptions on the input luminosity functions
-        \begin{itemize}
-            \item Dont worry about the details of the left/right $\sigma$ for the LF Gaussian
-            \item We should just say `we fit a skewed Gaussian to the Li et al data as per Vincenzi 2019' 
-        \end{itemize}
-    \item I think a figure of some template light curves would be nice, maybe I should include one with the rate methodology
-\end{itemize}
 
-\maria{Start to write stuff}
+\subsection{Core-Collapse Supernovae}
+
+Core collapse SNe are simulated using a library of 67 UV extended templates presented \cite{Vincenzi2019}. This library of templates has been built combining spectroscopy and multi-band photometry from 67 well observed core collapse events and it includes 6 different subclasses of core collapse SNe: 25 Type II SNe, 6 Type IIn SNe, 6 Type IIn SNe, 6 Type IIn SNe, 6 Type IIn SNe.
+Each template is extended into the ultra-violet (1700\AA) and the near-infrared (11000\AA).%Accurate extension and calibration of these models in the ultra-violet is particularly critical for the simulation of these events at higher redshift. 
+
+Core collapse SNe included in the template library are intrinsically biased towards bright events. For this reason, each template is adjusted so that the peak brightnesses of simulated SN events follow the correct distribution. This distribution is generally referred as luminosity function (LF) and describes the intrinsic distribution of peak brightnesses of a population of SNe. 
+In our simulations the matching between simulations and adopted LFs is done by applying \textit{sub-type dependent} magnitude offsets and smearing factors (so that the relative brightness between individual templates of the same sub-type is retained).
+We adopt the LFs presented in \cite{2011MNRAS.412.1441L} and revised in \cite{Vincenzi2019}, parameterised with a skewed Gaussian distribution. 
+
+%\chris{It would be great if Maria could add to this section}
+%\begin{itemize}
+%    \item Any time you want be to describe something, just let me know with a `Chris to explain comment'
+%    \item This subsection should be reasonably short, most of the details are in Vincenzi 2019
+%    \item e.g. ``In this section we describe the construction and usage of the CCSN templates for our simulations. Our methodology is presented and thoroughly described in Vincezi et al. 2019 but we summarise here...''
+%    \item Briefly explain where the template data is drawn from and how the templates are made
+%    \item Explain how the templates are use to generate PTF R light curves
+%    \item We need to talk about assumptions on the input luminosity functions
+%        \begin{itemize}
+%            \item Dont worry about the details of the left/right $\sigma$ for the LF Gaussian
+%            \item We should just say `we fit a skewed Gaussian to the Li et al data as per Vincenzi 2019' 
+%        \end{itemize}
+%    \item I think a figure of some template light curves would be nice, maybe I should include one with the rate methodology
+%\end{itemize}
+
+\maria{Maria finish your bit!!!!!!}
+
 \subsubsection{Stripped Evelope Supernovae}
 \angus{When introducing SESNe templates, say "We do not differentiate between the subclasses of normal luminosity SESNe (i.e. between Ib, Ic IIb SNe), as, given the heterogeneous nature of SESN spectra, divisions between these subclasses are poorly defined (Shrivvers et al. 2017), and miss-classification across these subgroups is a potential contaminant to any subsequent rate calculation\footnote{\angus{SLSNe-I are exempt from this issue, given the relative phase at which their spectra begin to resemble those of SNe~Ic, and the presence of shallow O\ion{II}~absorption in their early spectra, which are not observed within other SESN subclasses (Quimby et al. 2018).}}. Therefore we refer to all normal luminosity subclasses as SESNe from herein.}
 
@@ -405,9 +415,6 @@ Chris needs to write this asap!
 % When calculating any rate, careful consideration must be taken to account for observational biases within the simulation. Our observational detection efficiencies are taken from \citet{Frohmaier17}. As part of the analysis around 7 million artificial point sources were inserted into real observations, this characterised the PTF transient detection pipeline as a function of several key observational properties (source magnitude, seeing, sky background, limiting magnitude, host surface brightness). Ultimately, these detection efficiencies describe the probability that, on any given night during the survey, PTF would have detected an event.
 
 % Building on these principles, our method for calculating the volumetric SLSN-I rate proceeds as follows. We first define the sky area and redshift range over  which PTF would have been sensitive to SLSNe. Unlike other PTF rates analyses \citep{Frohmaier18, Frohmaier19}, we do not sub-divide the sky into smaller well-controlled `sub-surveys' with a regular cadence. This is because the long duration of SLSN light curves makes them less susceptible to cadence variations. We, therefore, simulate SLSNe over a ${\sim}$30,000\,deg$^2$ total footprint ($\Theta_\mathrm{obs}$) \chris{(The 30,000deg simulation is `id=2' in the database)}\ across 3 years of operation from 2010--2012 ($T_\mathrm{obs}$). We are unable to perform light curve simulations in data taken in 2009 due to the unreliable nature of the recovery efficiencies during the survey's first few months of operation. We set the upper limit for a simulated object to be z=0.2 following our sample definition in Section~\chris{Write about the sample}.
-
-
-
 
 
 
