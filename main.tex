@@ -63,7 +63,7 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[The Rates of Core Collapse Events in PTF]{From core-collapse to superluminous: The rates of massive stellar explosions in the Palomar Transient Factory}
+\title[The Rates of Core Collapse Events from PTF]{From core-collapse to superluminous: The rates of massive stellar explosions from the Palomar Transient Factory}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -91,7 +91,7 @@ $^{3}$DARK, Niels Bohr Insitute, University of Copenhagen, Lyngbyvej 2, 2100 Cop
 
 % Abstract of the paper
 \begin{abstract}
-    We present the volumetric rates of core-collapse supernovae (CCSNe) and Type I superluminous supernove (SLSNe-I) discovered by the Palomar Transient Factory (PTF). We separated the PTF survey operations into several sub-survyes of regular cadence and high spectroscopic classification efficiency to obtain a high-quality, low redshift (z${\le}0.035$) sample of 86 CC events. These sub-surveys were then replicated in a Monte-Carlo simulation involving hundreds of millions of CCSNe template realizations to forward-model the volumetric rate to infer the intrisic CCSN rate that best matched the PTF observations. From this, the CCSN rate was found to be $r^\mathrm{CC}_v=9.10_{-1.27}^{+1.55}\times10^{-5}\,\text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$, $ \langle z \rangle = 0.028$. We performed an additional simulation on the sub-sample of 26 events classified as stripped-envelope supernovae (SESNe) and calculated the first direct measurement of the absolute volumetric rate of SESNe to be $r^\mathrm{SE}_v=2.41_{-0.64}^{+0.8}\times10^{-5}\, \text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$. Our 10 SLSNe-I (z${\le}0.2$) were identified from a literature sample of PTF events and the forward-modelling of their rate was performed on a whole-sky simulation. We found the volumetric rate to be $r^\mathrm{SLSN-I}_v=38_{-13}^{+29}\, \text{SNe yr}^{-1}\text{Gpc}^{-3}\, h_{70}^{3}$, which represents the most precise SLSNe-I rate measurement to-date. A simple cosmic star-formation history was normalized to each SN rate to compare their realtive frequency. We find that the local fraction of SLSN-I to SESN is $\sim1/730$ and the fraction of SLSN-I to all CCSN types is $\sim 1/3100$.
+    We present the volumetric rates of core-collapse supernovae (CCSNe) and Type I superluminous supernove (SLSNe-I) discovered by the Palomar Transient Factory (PTF). We separated the PTF survey operations into several sub-survyes of regular cadence and high spectroscopic classification efficiency to obtain a high-quality, low redshift (z${\le}0.035$) sample of 86 CC events. These sub-surveys were then replicated in a Monte-Carlo simulation involving hundreds of millions of CCSNe template realizations to forward-model the volumetric rate to infer the intrisic CCSN rate that best matched the PTF observations. From this, the CCSN rate was found to be $r^\mathrm{CC}_v=9.10_{-1.27}^{+1.55}\times10^{-5}\,\text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$, $ \langle z \rangle = 0.028$. We performed an additional simulation on the sub-sample of 26 events classified as stripped-envelope supernovae (SESNe) and calculated the first direct measurement of the absolute volumetric rate of SESNe to be $r^\mathrm{SE}_v=2.41_{-0.64}^{+0.8}\times10^{-5}\, \text{SNe yr}^{-1}\,\text{Mpc}^{-3}\, h_{70}^{3}$. Our 8 SLSNe-I (z${\le}0.2$) were identified from a literature sample of PTF events and the forward-modelling of their rate was performed on a whole-sky simulation. We found the volumetric rate to be $r^\mathrm{SLSN-I}_v=38_{-13}^{+29}\, \text{SNe yr}^{-1}\text{Gpc}^{-3}\, h_{70}^{3}$, which represents the most precise SLSNe-I rate measurement to-date. A simple cosmic star-formation history was normalized to the CC and SESNe rates such that their realtive frequency to SLSNe-I could be measured. We find that the local fraction of SLSN-I to SESN is $\sim1/730$ and the fraction of SLSN-I to all CCSN types is $\sim 1/3100$.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -105,7 +105,7 @@ keyword1 -- keyword2 -- keyword3
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-With the movement of transient surveys towards more wide-field, high cadence, untargeted observing strategies, astronomers have begun to populate the transient luminosity-duration domain at an unprecedented rate, uncovering an increasingly diverse variable Universe, with events ranging from the fast-and-faint to the enduring-and-bright. 
+With the movement of transient surveys towards more wide-field, high cadence, untargeted observing strategies \chris{(Chris: "movement of", I would argue that this has already happened and it's now trendy! We've just been slow in writing.)}, astronomers have begun to populate the transient luminosity-duration domain at an unprecedented rate, uncovering an increasingly diverse variable Universe, with events ranging from the fast-and-faint to the enduring-and-bright. 
 
 Not only have these efforts uncovered new populations of transients, they have highlighted the diversity of existing populations of supernovae (SNe) classes. This is perhaps most pronounced amongst core collapse SNe (CCSNe), the explosions that mark the ends of the lives of massive stars ($\sim>$8M$_{\odot}$; e.g. {\angus{Heger et al. 2003; Smartt 2009}}). Observationally, this group can be dichotomised based on the presence of hydrogen in their spectrum with \lq hydrogen-rich events\rq~ displaying clear signatures at all epochs of their evolution. The hydrogen-poor, \lq Stripped envelope\rq~ SNe (SESNe), on the other hand, predominantly lack hydrogen in their spectra (with the exception of SNe-IIb, which display some hydrogen at early times before evolving to show prominent helium emission later), and may or may not display signatures of helium (subclasses Ib and Ic respectively). These SESN subclasses are incredibly heterogeneous in nature {\angus{[REFS!]}}, although can be broadly grouped based upon the relative abundances of H/He in their spectra. They are thought to arise due to progenitors which have been subject to differing levels of stripping prior to explosion. However, the exact progenitor systems of SESNe, and the way in which these outer layers of hydrogen rich material are removed from the star, are currently unknown. 
 
@@ -115,9 +115,9 @@ The removal of a massive stellar envelope may take place through one of two main
 Recently an additional subclass of SESN event has emerged, hydrogen-poor Superluminous Supernovae (SLSNe-I). This slowly growing subgroup exhibit typically bright peak luminosities ($M\sim$-20) and long-lived optical light curves, requiring extreme energies behind their production (events frequently radiate in excess of $\sim10^{51}\,{\rm ergs\,s^{-1}}$). Spectroscopically these events are blue
 and rather featureless prior to maximum light, with characteristic broad O$_{\mathrm{II}}$ absorption lines {\angus{{Quimby et al. 2011}}} and some stronger absorption features in the near ultraviolet (UV) attributed to heavy elements {\angus{{(see more detailed discussion in Quimby et al. 2018)}}}. However, at 30 rest-frame days post-max, the spectra of SLSNe-I more closely resemble both normal and broad-lined type Ic SNe at peak {\angus{{(Pastorello et al. 2010; Liu et al. 2017)}}}.
 
-Here too, there exists significant uncertainty surrounding their progenitor systems, as their energy requirements surpass the typical energies produced under standard core-collapse models. Proposed models for their production range from interaction with hydrogen-free circumstellar material \citep{Chevalier2011,Chatzopoulos2013,Sorokina2016}, to pair instability explosions \citep{Woosley2007,Yan2015}, to energy injection from a central compact object \citep{Kasen2010,Woosley2010,Inserra2013}. The latter of these theories, implemented through the spin down of a newly formed magnetar, is capable of broadly replicating the light curve evolution and spectroscopic features of a large number of SLSNe-I reasonably well \citep{Dessart2012,Inserra2013,Nicholl2013,Mazzali2016,Nicholl2017B}, although it is at present uncertain whether this mechanism alone can power {\textit{all}} SLSNe-I events, or if additional sources of energy are also required to fully encapsulate their physical properties \angus{(Wang et al. 2016, Inserra et al 2018a, Blanchard et al 2018, Angus et al. 2018)}. 
+Here too, there exists significant uncertainty surrounding their progenitor systems, as their energy requirements surpass the typical energies produced under standard core-collapse models. Proposed models for their production range from interaction with hydrogen-free circumstellar material \citep{Chevalier2011,Chatzopoulos2013,Sorokina2016}, to pair instability explosions \citep{Woosley2007,Yan2015}, to energy injection from a central compact object \citep{Kasen2010,Woosley2010,Inserra2013}. The latter of these theories, implemented through the spin down of a newly formed magnetar, is capable of broadly replicating the light curve evolution and spectroscopic features of a large number of SLSNe-I reasonably well \citep{Dessart2012,Inserra2013,Nicholl2013,Mazzali2016,Nicholl2017B}, although it is at present uncertain whether this mechanism alone can power {\textit{all}} SLSNe-I events, or if additional sources of energy are also required to fully encapsulate their physical properties \angus{(Wang et al. 2016, Inserra et al 2018a, Blanchard et al 2018, Angus et al. 2018)}.
 
-In more recent years homogeneously selected samples of SLSNe have begun to highlight significant diversity in both their photometric and spectroscopic properties \angus{De Cia 2018, Lunnan 2018, Angus 2019, Quimby 2019}, demonstrating a much broader range of luminosities and evolutionary timescales than previously attributed to this spectroscopic class. Indeed, such samples have begun to expand into the faint tail of the SLSN luminosity function, highlighting a potentially undersampled population of less luminous events. The luminosities and energies associated with these less-luminous SLSNe are much closer to those associated with SN~Ia explosions, and draw nearer to the brighter end of the \lq normal\rq~ CCSN regime. When combined with the propensity of these events to possess similar spectral features to Ic SNe at late times and during the nebular phase {\angus{(Nicholl et al. 2016b; Jerkstrand et al. 2017)}}, has led to some suggestions that the two spectroscopic subclasses are perhaps connected than originally thought \angus{De Cia et al 2018, Quimby 2018}. 
+In more recent years homogeneously selected samples of SLSNe have begun to highlight significant diversity in both their photometric and spectroscopic properties \angus{De Cia 2018, Lunnan 2018, Angus 2019, Quimby 2019}, demonstrating a much broader range of luminosities and evolutionary timescales than previously attributed to this spectroscopic class. Indeed, such samples have begun to expand into the faint tail of the SLSN luminosity function, highlighting a potentially undersampled population of less luminous events. The luminosities and energies associated with these less-luminous SLSNe are much closer to those associated with SN~Ia explosions, and draw nearer to the brighter end of the \lq normal\rq~ CCSN regime. When combined with the propensity of these events to possess similar spectral features to Ic SNe at late times and during the nebular phase {\angus{(Nicholl et al. 2016b; Jerkstrand et al. 2017)}}, has led to some suggestions that the two spectroscopic subclasses are perhaps connected than originally thought \angus{De Cia et al 2018, Quimby 2018}.
 
 Whether a physical connection exists between all of the spectroscopic subclasses of SESNe in uncertain. Their heterogeneous spectroscopic properties and broad luminosities suggest a continuum across the stripped-envelope spectrum, which in turn might be interpreted as a similarity in progenitor setup or envelope stripping mechanism. A magnetar powered scenario is able to provide a broad range of power outputs depending upon the initial spin period and magnetic-field strength of the magnetar \angus{(Kasen \& Bildsten 2010; Woosley 2010, Nicholl et al. 2017B)}, and as such, could provide a unified model to encompass all SESN explosions. However, given the lack of observable predictions from current models, these connections are still highly speculative, requiring both more detailed modelling and larger, high quality datasets of SESN observations to merit further exploration. \comment{\angus{Too harsh?}}  
 
@@ -125,7 +125,7 @@ One way in which we can begin to probe the underlying progenitor systems of SESN
 
 In this paper, we present the measurements of the rate of Type II SNe, Type Ib/c SNe and SLSNe-I from the Palomar Transient Factory \citep[PTF;][]{PTF_REF}. PTF was an automated optical sky transient survey operating at the Samuel Oschin 48 inch telescope (P48) at the Palomar Observatory, searching over 8000 deg$^{2}$ of the optical sky over its initial phase between 2009-2012, reaching typical depths of $M_{R}\sim$\angus{20?}. This wide-field survey presents the perfect opportunity to constrain the low-redshift rate of core collapse events of all luminosities, from which we may compare to models of their production and any environmental dependencies in the Local Universe. 
 
-In Section 2 we begin with a description of the general method for calculating volumetric transient rates in the PTF survey. In Section 3 we present our template light curves and justify our assumptions for the model parameters. In Section 4 we describe our method of constructing the survey simulation and the construction of a supernova sample for each of our transient sub-types. This is followed by a detailed explanation of the marriage between simulation and observation to calculate the rates of our SN population. We conclude by reviewing the implications of our results in Section 5. Throughout, where relevant we assume a flat $\Lambda$CDM Universe with a matter density $\Omega_{M}=0.3$ and a Hubble constant of $H_{0}= 70$km s$^{−1}$ Mpc$^{−1}$, and we work in the AB photometric system.
+In Section 2 we begin with a description of the general method for calculating volumetric transient rates in the PTF survey. In Section 3 we present our template light curves and justify our assumptions for the model parameters. In Section 4 we describe our method of constructing the survey simulation and the construction of a supernova sample for each of our transient sub-types. This is followed by a detailed explanation of the marriage between simulation and observation to calculate the rates of our SN population. We conclude by reviewing the implications of our results in Section 5. Throughout, where relevant we assume a flat $\Lambda$CDM Universe with a matter density $\Omega_{M}=0.3$ and a Hubble constant of $H_{0}= 70$km s$^{-1}$ Mpc$^{-1}$, and we work in the AB photometric system.
 
 
 \section{Rates from the PTF Survey}
@@ -299,24 +299,107 @@ Due to the limited spectroscopic follow-up resources avaliable to any sky survey
 
 We begin by applying our strict light curve quality cuts from Section~\ref{sec:coverage_cuts} and sub-survey parameters from TableXX to reduce the number of potential PTF SN candidates to 987. Most of these objects, however, have been spectroscopically typed and removing those with a definitive classification reduces our candidate sample size to 20. We note that if the object was spectroscopically observed and the classification was unclear we retained the object in our prelimnary sample. These final candidates were cross matched to the SDSS galaxy catalogues and visually inspected to confirm no host misidentification \citep{Sullivan2006,Gupta2016} and in the event of a galaxy redshift we rejected objects with $\mathrm{z}_\mathrm{host}{>}0.035$. This resulted in three objects that warranted further investigation; PTF12bvf, PTF12cxz, PTF12gfx. We were able to cross-match PTF12cxz with a known SN-imposter candidate which was later identified in 2014 \citep{2014ATel.5737....1T}, we thus conclude that PTF12cxz is was likely a luminous blue variable eruption and can be excluded from out sample.
 
-Our final candidates, PTF12bvf and PTF12gfx, are presented in Table~\ref{tab:photCCproperties} and both have host spectroscopic redshifts that fall within our sample requirements. We thus consider these objects to be viable CCSN candidates and include them in the rates analysis in SectionXX.
+Our final candidates, PTF12bvf and PTF12gfx, are presented in Table~\ref{tab:ccsn_properties} and both have host spectroscopic redshifts that fall within our sample requirements. We thus consider these objects to be viable CCSN candidates and include them in the rates analysis in SectionXX.
 
 \begin{table}
-    \caption{PTF CCSN photometric candidates }
-    \centering
-    \chris{CHRIS, put the goddam coordinates in sexagesimal and add ALL CC candidates}\\
-	\begin{tabular}{l l l l l l} 
-		\hline
-
-ptfname &     ra     &    dec     & redshift  \\
-		\hline
- PTF12bvf   &  177.75691 &  20.399901 & 0.022  \\
- PTF12gfx   & 240.413968 &  16.310245 &    0.029 \\
- 
- 		\hline
-		\label{tab:photCCproperties}
-	\end{tabular}
- \end{table}
+    \caption{The core-collapse supernova sample, with their redshfits and spectroscopic classification. We also list the two photometrically identified candidates, but do not assign them a classification.}
+    \begin{center}
+    \begin{tabular}{lccrl}
+        \hline
+    PTF Name & RA & Dec. & Redshift & SN Type \\
+             & (J2000) & (J2000) & & \\
+        \hline
+    PTF10acbu & 14:00:46.92 & +59:20:16.53 & 0.0099 & SN Ic \\
+    PTF10bau & 09:16:21.29 & +17:43:40.24 & 0.026 & SN IIP \\
+    PTF10bgl & 10:19:04.70 & +46:27:23.34 & 0.03 & SN IIP \\
+    PTF10bld & 12:12:16.38 & +17:14:45.52 & 0.027 & SN II \\
+    PTF10cxx & 14:47:27.78 & +01:55:03.79 & 0.034 & SN IIb \\
+    PTF10dvb & 17:16:12.25 & +31:47:36.01 & 0.023 & SN IIP \\
+    PTF10ehy & 13:39:29.47 & +46:00:53.75 & 0.006 & SN IIP \\
+    PTF10eqe & 14:04:34.18 & +63:43:26.15 & 0.031 & SN II \\
+    PTF10eqi & 15:06:56.97 & +56:30:26.47 & 0.03 & SN Ib \\
+    PTF10eqz & 15:08:10.43 & +63:00:42.49 & 0.029 & SN II \\
+    PTF10feq & 12:12:21.40 & +16:58:45.17 & 0.028 & SN Ib \\
+    PTF10fgz & 14:37:44.53 & +52:43:32.70 & 0.012 & SN II \\
+    PTF10fjh & 16:46:55.36 & +34:09:34.71 & 0.032 & SN IIn \\
+    PTF10fmr & 12:33:24.36 & +44:32:16.04 & 0.02 & SN IIb \\
+    PTF10fqg & 12:41:49.86 & +11:35:28.11 & 0.028 & SN IIb \\
+    PTF10fqx & 16:46:01.27 & +63:28:59.52 & 0.017 & SN IIP \\
+    PTF10gki & 14:04:11.25 & +33:18:21.61 & 0.026 & SN II \\
+    PTF10gva & 12:23:55.40 & +10:34:50.62 & 0.028 & SN II \\
+    PTF10gxi & 12:44:33.68 & +31:05:05.35 & 0.029 & SN II \\
+    PTF10hlc & 15:44:18.60 & +45:48:14.97 & 0.035 & SN II \\
+    PTF10hny & 15:04:25.29 & +49:24:02.96 & 0.027 & SN IIP \\
+    PTF10hpa & 12:45:29.30 & +53:51:47.37 & 0.03 & SN IIP \\
+    PTF10hyq & 12:46:27.24 & +40:45:00.32 & 0.016 & SN IIP \\
+    PTF10jkx & 13:32:57.11 & +48:18:54.55 & 0.029 & SN II \\
+    PTF10kui & 13:31:38.54 & +40:11:33.96 & 0.021 & SN Ib \\
+    PTF10lnx & 16:04:39.18 & +13:23:43.68 & 0.034 & SN II \\
+    PTF10myz & 14:58:13.71 & +48:11:28.19 & 0.028 & SN IIP \\
+    PTF10npd & 23:20:12.62 & -07:28:50.42 & 0.01 & SN IIP \\
+    PTF10osr & 23:45:45.16 & +11:28:42.37 & 0.024 & SN IIP \\
+    PTF10qob & 01:25:47.51 & -01:22:30.13 & 0.019 & SN IIP \\
+    PTF10qwz & 23:35:18.61 & +12:55:31.81 & 0.02 & SN IIP \\
+    PTF10rad & 23:28:24.08 & -11:07:27.67 & 0.024 & SN II \\
+    PTF10raj & 02:43:24.13 & +03:06:17.58 & 0.023 & SN II \\
+    PTF10rin & 22:52:38.95 & +13:00:36.57 & 0.032 & SN IIP \\
+    PTF10rmn & 00:16:25.40 & +30:28:51.29 & 0.024 & SN IIP \\
+    PTF10svt & 03:37:17.83 & -17:05:41.23 & 0.031 & SN Ic \\
+    PTF10tff & 14:37:01.40 & +48:32:40.62 & 0.0075 & SN IIP \\
+    PTF10tpa & 23:04:40.96 & -09:38:27.01 & 0.033 & SN IIP \\
+    PTF10ttd & 02:06:52.17 & -11:49:57.04 & 0.015 & SN IIP \\
+    PTF10uiy & 00:23:16.42 & -10:18:54.68 & 0.023 & SN II \\
+    PTF10ujc & 23:34:31.92 & +22:21:03.24 & 0.032 & SN IIn \\
+    PTF10vdl & 23:05:48.88 & +03:31:25.54 & 0.016 & SN IIP \\
+    PTF10vnv & 02:00:24.81 & +24:34:44.16 & 0.015 & SN Ib \\
+    PTF10wcy & 00:25:19.50 & -14:33:37.50 & 0.024 & SN II \\
+    PTF10wmf & 21:56:15.70 & +02:10:13.78 & 0.029 & SN IIP \\
+    PTF10xgo & 21:55:57.38 & +01:19:14.11 & 0.034 & SN IIn \\
+    PTF10xjr & 02:49:19.49 & -08:10:30.21 & 0.03 & SN Ib \\
+    PTF10xjv & 00:10:29.13 & +24:28:01.05 & 0.028 & SN IIP \\
+    PTF10yna & 23:15:53.57 & +20:28:17.36 & 0.023 & SN II \\
+    PTF10yow & 21:54:23.30 & +15:09:20.65 & 0.025 & SN Ic \\
+    PTF10zcn & 23:19:14.39 & +26:03:11.62 & 0.02 & SN Ic \\
+    PTF11bli & 14:02:16.18 & +33:39:41.46 & 0.03 & SN Ib/c \\
+    PTF11bov & 12:56:53.94 & +22:22:28.14 & 0.022 & SN Ic \\
+    PTF11cgx & 14:13:46.00 & +34:02:12.93 & 0.033 & SN II \\
+    PTF11dhf & 17:22:51.47 & +60:07:49.88 & 0.028 & SN IIb \\
+    PTF11ecp & 16:43:54.10 & +25:00:53.98 & 0.034 & SN II \\
+    PTF11eon & 13:30:05.08 & +47:10:11.22 & 0.0016 & SN IIb \\
+    PTF11ftc & 21:06:39.24 & -13:33:09.46 & 0.03 & SN II \\
+    PTF11ftr & 23:55:35.79 & +29:12:19.94 & 0.018 & SN II \\
+    PTF11fuv & 22:03:15.00 & +00:34:24.90 & 0.03 & SN IIP \\
+    PTF11gls & 16:31:39.38 & +41:29:23.12 & 0.03 & SN IIP \\
+    PTF11htj & 21:16:03.50 & +12:31:20.95 & 0.017 & SN IIP \\
+    PTF11hyg & 23:27:57.34 & +08:46:38.02 & 0.03 & SN Ic \\
+    PTF11iil & 21:07:41.58 & -13:39:55.11 & 0.029 & SN II \\
+    PTF11klg & 22:07:09.92 & +06:29:08.72 & 0.027 & SN Ic \\
+    PTF11qax & 23:42:25.58 & +00:15:16.83 & 0.022 & SN IIP \\
+    PTF11qcj & 13:13:41.51 & +47:17:57.03 & 0.028 & SN Ibn \\
+    PTF12bro & 12:24:17.05 & +18:55:27.96 & 0.023 & SN IIP \\
+    PTF12bvf & 11:51:01.66 & +20:23:59.64 & 0.022 &  \\
+    PTF12cde & 13:58:58.39 & +36:14:26.43 & 0.013 & SN Ib/c \\
+    PTF12cgb & 16:21:44.43 & +43:44:23.15 & 0.026 & SN II \\
+    PTF12cli & 13:42:34.46 & +35:01:15.83 & 0.024 & SN II \\
+    PTF12cod & 13:22:35.29 & +54:48:47.11 & 0.012 & SN II \\
+    PTF12dcp & 16:12:56.12 & +32:30:43.21 & 0.031 & SN Ic \\
+    PTF12eaw & 14:35:17.71 & +35:07:04.14 & 0.029 & SN Ib \\
+    PTF12fip & 15:00:51.04 & +09:20:25.12 & 0.034 & SN II \\
+    PTF12gfx & 16:01:39.35 & +16:18:36.88 & 0.029 &  \\
+    PTF12gnn & 15:58:49.28 & +36:10:10.95 & 0.031 & SN II \\
+    PTF12gnt & 17:27:47.30 & +26:51:22.11 & 0.029 & SN II \\
+    PTF12gzk & 22:12:41.53 & +00:30:43.07 & 0.014 & SN Ic \\
+    PTF12hap & 16:23:10.01 & +25:42:06.92 & 0.02 & SN II \\
+    PTF12hno & 23:04:55.63 & -06:32:11.67 & 0.019 & SN II \\
+    PTF12hvv & 21:45:46.45 & -00:03:25.12 & 0.029 & SN Ic \\
+    PTF12iif & 23:43:44.15 & -14:42:38.30 & 0.024 & SN IIP \\
+    PTF12izy & 02:32:39.67 & +00:37:00.12 & 0.021 & SN II \\
+    PTF12jfp & 23:10:12.80 & +30:34:43.11 & 0.02 & SN II \\
+    \hline
+		\label{tab:ccsn_properties}
+    \end{tabular}
+    \end{center}
+    \end{table}
 
 
 \subsection{The SLSN sample}
@@ -324,13 +407,35 @@ ptfname &     ra     &    dec     & redshift  \\
 
 The PTF hydrogen-poor SLSNe we consider for this rates analysis were classified in \citet{Quimby2013} and the light curves were presented in \citet{DeCia2017}. In total, 26 SLSNe-I were studied from PTF and iPTF to form the largest low-redshift, homogeneously selected, sample of SLSN-I to-date. The host galaxies of the PTF SLSN sample are presented in \citet{Perley2016}, however their sample differs slightly to other PTF analyses due to a different sample luminosity cut.
 
-We choose to draw our candidates from TableXX in \citet{DeCia2017} and subsequently obtained their light curves from the PTF transient data base. Each light curve was then checked to see if it met the coverage cuts described in Section~\ref{sec:coverage_cuts}. We are presented with a choice of redshift cut at this stage of the analysis which, again, is motivated by a desire to have a high sample completeness. The volume weighted mean redshift of the \citet{DeCia2017} sample is $\langle \mathrm{z} \rangle = 0.33$ and they claim the redshift distribution monotonically falls beyond z${\sim}$0.5 due to an observational bias set by by the limiting magnitude of the PTF survey. Undeniably, all surveys are affected by a malmquist bias, however, given the uncertainties in the SLSNe-I luminosty function and the small number of events driving the redshift distribution, we choose to be conservative in our rate sample redshift limit and set it to be z${\le}$0.2. This limit coincides with an apparent peak in the \citet{DeCia2017} redshift distribution and also ensures the the majority of objects simulated from our own luminosity function in Section~\ref{sec:simSLSN} will be detectable by PTF. Applying this redshift cut to the \citet{DeCia2017} sample provides us with 8 objects.
+We choose to draw our candidates from \citet[][Table 1.]{DeCia2017} and subsequently obtained their light curves from the PTF transient data base. Each light curve was then checked to see if it met the coverage cuts described in Section~\ref{sec:coverage_cuts}. We are presented with a choice of redshift cut at this stage of the analysis which, again, is motivated by a desire to have a high sample completeness. The volume weighted mean redshift of the \citet{DeCia2017} sample is $\langle \mathrm{z} \rangle = 0.33$ and they claim the redshift distribution monotonically falls beyond z${\sim}$0.5 due to an observational bias set by by the limiting magnitude of the PTF survey. Undeniably, all surveys are affected by a malmquist bias, however, given the uncertainties in the SLSNe-I luminosty function and the small number of events driving the redshift distribution, we choose to be conservative in our rate sample redshift limit and set it to be z${\le}$0.2. This limit coincides with an apparent peak in the \citet{DeCia2017} redshift distribution and also ensures the the majority of objects simulated from our own luminosity function in Section~\ref{sec:simSLSN} will be detectable by PTF. Applying this redshift cut to the \citet{DeCia2017} sample provides us with 8 objects.
 
 Talk about how this is whole sky
 
 Create a table of SLSNe in the sample
 
 \chris{Argh, there's so much still to do}
+
+\begin{table}
+    \caption{The superluminous supernova sample used in our rate measurement.}
+    \begin{center}
+    \begin{tabular}{lccrl}
+        \hline
+    PTF Name & RA & Dec. & Redshift & SN Type \\
+             & (J2000) & (J2000) & & \\
+        \hline
+    PTF10bfz & 12:54:41.27 & +15:24:16.99 & 0.17 & SLSN-I \\
+    PTF10hgi & 16:37:47.04 & +06:12:32.32 & 0.099 & SLSN-I \\
+    PTF10vwg & 18:59:32.86 & +19:24:25.74 & 0.19 & SLSN-I \\
+    PTF11hrq & 00:51:47.22 & -26:25:09.99 & 0.057 & SLSN-I \\
+    PTF11rks & 01:39:45.51 & +29:55:27.01 & 0.19 & SLSN-I \\
+    PTF12dam & 14:24:46.20 & +46:13:48.32 & 0.11 & SLSN-I \\
+    PTF12gty & 16:01:15.23 & +21:23:17.42 & 0.18 & SLSN-I \\
+    PTF12hni & 22:31:55.86 & -06:47:48.99 & 0.11 & SLSN-I \\
+    \hline
+		\label{tab:slsn_properties}
+    \end{tabular}
+    \end{center}
+    \end{table}
 
 
 \subsection{Host Surface Brightness}
@@ -458,7 +563,7 @@ Rates provide one way in which we can break the degeneracy between host star for
     
     \item 
     
-    \item Whilst we have presented a low-redshift measurement of the rates of CCSNe, SESNe and SLSNe from PTF, there exisits strong evidence that trends in the relative SN rates change as a function of metallicity (e.g., Modjaz et al. 2008; Arcavi et al. 2010; Modjaz et al. 2011; Kelly & Kirshner 2012; Yoon 2015), which becomes particularly important when we consider differences in subgalactic environments (e.g., Modjaz et al. 2008; Anderson et al. 2010; Modjaz et al. 2011; Anderson et al. 2016); 
+    \item Whilst we have presented a low-redshift measurement of the rates of CCSNe, SESNe and SLSNe from PTF, there exisits strong evidence that trends in the relative SN rates change as a function of metallicity (e.g., Modjaz et al. 2008; Arcavi et al. 2010; Modjaz et al. 2011; Kelly \& Kirshner 2012; Yoon 2015), which becomes particularly important when we consider differences in subgalactic environments (e.g., Modjaz et al. 2008; Anderson et al. 2010; Modjaz et al. 2011; Anderson et al. 2016); 
     
     \item 
     \item Issues with IMF integration method - binaries, mix of metallicities (SLSNe are low but CCSNe come from a mix in the local univerise). Ibc single/binary fraction. 
